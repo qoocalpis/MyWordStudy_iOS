@@ -1,0 +1,38 @@
+{
+  "identifier" : "9EFF4C3A",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "6.89",
+      "familyShareable" : false,
+      "internalID" : "A8B41AF0",
+      "localizations" : [
+        {
+          "description" : "All function",
+          "displayName" : "All function",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "全ての機能",
+          "displayName" : "全ての機能",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "com.AllFunctions.app",
+      "referenceName" : "AllFunction",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

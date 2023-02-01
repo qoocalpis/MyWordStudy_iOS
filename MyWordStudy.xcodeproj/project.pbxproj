@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		938BBA1B298541F300858318 /* MyWordStudyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA1A298541F300858318 /* MyWordStudyApp.swift */; };
+		938BBA22298541F700858318 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938BBA21298541F700858318 /* Preview Assets.xcassets */; };
+		938BBA2A2985434900858318 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 938BBA292985434900858318 /* Realm */; };
+		938BBA2C2985434900858318 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 938BBA2B2985434900858318 /* RealmSwift */; };
+		938BBA2F298549F400858318 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 938BBA2E298549F400858318 /* Alamofire */; };
+		938BBA4529854B7200858318 /* CameraScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3129854B7200858318 /* CameraScannerView.swift */; };
+		938BBA4629854B7200858318 /* TranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3229854B7200858318 /* TranslateView.swift */; };
+		938BBA4729854B7200858318 /* StudyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3329854B7200858318 /* StudyImageView.swift */; };
+		938BBA4829854B7200858318 /* DictionaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3429854B7200858318 /* DictionaryListView.swift */; };
+		938BBA4929854B7200858318 /* WrongExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3529854B7200858318 /* WrongExamView.swift */; };
+		938BBA4A29854B7200858318 /* DeeplAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3629854B7200858318 /* DeeplAPI.swift */; };
+		938BBA4B29854B7200858318 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3729854B7200858318 /* ProductView.swift */; };
+		938BBA4C29854B7200858318 /* DetailExamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3829854B7200858318 /* DetailExamListView.swift */; };
+		938BBA4D29854B7200858318 /* DeleteDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3929854B7200858318 /* DeleteDataView.swift */; };
+		938BBA4E29854B7200858318 /* SourceLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3A29854B7200858318 /* SourceLanguageView.swift */; };
+		938BBA4F29854B7200858318 /* TargetLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3B29854B7200858318 /* TargetLanguageView.swift */; };
+		938BBA5029854B7200858318 /* CameraScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3C29854B7200858318 /* CameraScannerViewController.swift */; };
+		938BBA5129854B7200858318 /* EmptyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3D29854B7200858318 /* EmptyInfoView.swift */; };
+		938BBA5229854B7200858318 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3E29854B7200858318 /* RegisterView.swift */; };
+		938BBA5329854B7200858318 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA3F29854B7200858318 /* SettingView.swift */; };
+		938BBA5429854B7200858318 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA4029854B7200858318 /* DictionaryView.swift */; };
+		938BBA5529854B7200858318 /* StartExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA4129854B7200858318 /* StartExamView.swift */; };
+		938BBA5629854B7200858318 /* ExamHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA4229854B7200858318 /* ExamHomeView.swift */; };
+		938BBA5729854B7200858318 /* ResultExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA4329854B7200858318 /* ResultExamView.swift */; };
+		938BBA5829854B7200858318 /* WrongResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA4429854B7200858318 /* WrongResultView.swift */; };
+		938BBA6129854B7C00858318 /* SourceLangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA5A29854B7C00858318 /* SourceLangModel.swift */; };
+		938BBA6229854B7C00858318 /* DictionaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA5B29854B7C00858318 /* DictionaryViewModel.swift */; };
+		938BBA6329854B7C00858318 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA5C29854B7C00858318 /* SettingViewModel.swift */; };
+		938BBA6429854B7C00858318 /* ExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA5D29854B7C00858318 /* ExamViewModel.swift */; };
+		938BBA6529854B7C00858318 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA5E29854B7C00858318 /* StoreKitManager.swift */; };
+		938BBA6629854B7C00858318 /* NetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA5F29854B7C00858318 /* NetworkState.swift */; };
+		938BBA6729854B7C00858318 /* TargetLangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA6029854B7C00858318 /* TargetLangModel.swift */; };
+		938BBA6929854B8C00858318 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BBA6829854B8C00858318 /* HomeTabView.swift */; };
+		938BBA6D29854BA400858318 /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 938BBA6A29854BA400858318 /* PropertyList.plist */; };
+		938BBA6E29854BA400858318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938BBA6B29854BA400858318 /* Assets.xcassets */; };
+		938BBA6F29854BA400858318 /* Product.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 938BBA6C29854BA400858318 /* Product.storekit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		938BBA17298541F300858318 /* MyWordStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWordStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		938BBA1A298541F300858318 /* MyWordStudyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWordStudyApp.swift; sourceTree = "<group>"; };
+		938BBA21298541F700858318 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		938BBA3129854B7200858318 /* CameraScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraScannerView.swift; sourceTree = "<group>"; };
+		938BBA3229854B7200858318 /* TranslateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslateView.swift; sourceTree = "<group>"; };
+		938BBA3329854B7200858318 /* StudyImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyImageView.swift; sourceTree = "<group>"; };
+		938BBA3429854B7200858318 /* DictionaryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryListView.swift; sourceTree = "<group>"; };
+		938BBA3529854B7200858318 /* WrongExamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrongExamView.swift; sourceTree = "<group>"; };
+		938BBA3629854B7200858318 /* DeeplAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeeplAPI.swift; sourceTree = "<group>"; };
+		938BBA3729854B7200858318 /* ProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		938BBA3829854B7200858318 /* DetailExamListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailExamListView.swift; sourceTree = "<group>"; };
+		938BBA3929854B7200858318 /* DeleteDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteDataView.swift; sourceTree = "<group>"; };
+		938BBA3A29854B7200858318 /* SourceLanguageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceLanguageView.swift; sourceTree = "<group>"; };
+		938BBA3B29854B7200858318 /* TargetLanguageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetLanguageView.swift; sourceTree = "<group>"; };
+		938BBA3C29854B7200858318 /* CameraScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraScannerViewController.swift; sourceTree = "<group>"; };
+		938BBA3D29854B7200858318 /* EmptyInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyInfoView.swift; sourceTree = "<group>"; };
+		938BBA3E29854B7200858318 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		938BBA3F29854B7200858318 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		938BBA4029854B7200858318 /* DictionaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
+		938BBA4129854B7200858318 /* StartExamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartExamView.swift; sourceTree = "<group>"; };
+		938BBA4229854B7200858318 /* ExamHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamHomeView.swift; sourceTree = "<group>"; };
+		938BBA4329854B7200858318 /* ResultExamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultExamView.swift; sourceTree = "<group>"; };
+		938BBA4429854B7200858318 /* WrongResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrongResultView.swift; sourceTree = "<group>"; };
+		938BBA5A29854B7C00858318 /* SourceLangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceLangModel.swift; sourceTree = "<group>"; };
+		938BBA5B29854B7C00858318 /* DictionaryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewModel.swift; sourceTree = "<group>"; };
+		938BBA5C29854B7C00858318 /* SettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		938BBA5D29854B7C00858318 /* ExamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewModel.swift; sourceTree = "<group>"; };
+		938BBA5E29854B7C00858318 /* StoreKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
+		938BBA5F29854B7C00858318 /* NetworkState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkState.swift; sourceTree = "<group>"; };
+		938BBA6029854B7C00858318 /* TargetLangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetLangModel.swift; sourceTree = "<group>"; };
+		938BBA6829854B8C00858318 /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		938BBA6A29854BA400858318 /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
+		938BBA6B29854BA400858318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../MyWords/MyWords/MyWords/Assets.xcassets; sourceTree = "<group>"; };
+		938BBA6C29854BA400858318 /* Product.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Product.storekit; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		938BBA14298541F300858318 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				938BBA2F298549F400858318 /* Alamofire in Frameworks */,
+				938BBA2C2985434900858318 /* RealmSwift in Frameworks */,
+				938BBA2A2985434900858318 /* Realm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		938BBA0E298541F300858318 = {
+			isa = PBXGroup;
+			children = (
+				938BBA19298541F300858318 /* MyWordStudy */,
+				938BBA18298541F300858318 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		938BBA18298541F300858318 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				938BBA17298541F300858318 /* MyWordStudy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		938BBA19298541F300858318 /* MyWordStudy */ = {
+			isa = PBXGroup;
+			children = (
+				938BBA7029860DBB00858318 /* Other */,
+				938BBA1A298541F300858318 /* MyWordStudyApp.swift */,
+				938BBA6829854B8C00858318 /* HomeTabView.swift */,
+				938BBA5929854B7C00858318 /* Model */,
+				938BBA3029854B7200858318 /* View */,
+				938BBA6B29854BA400858318 /* Assets.xcassets */,
+				938BBA6C29854BA400858318 /* Product.storekit */,
+				938BBA6A29854BA400858318 /* PropertyList.plist */,
+				938BBA20298541F700858318 /* Preview Content */,
+			);
+			path = MyWordStudy;
+			sourceTree = "<group>";
+		};
+		938BBA20298541F700858318 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				938BBA21298541F700858318 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		938BBA3029854B7200858318 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				938BBA3D29854B7200858318 /* EmptyInfoView.swift */,
+				938BBA3E29854B7200858318 /* RegisterView.swift */,
+				938BBA4029854B7200858318 /* DictionaryView.swift */,
+				938BBA3429854B7200858318 /* DictionaryListView.swift */,
+				938BBA3229854B7200858318 /* TranslateView.swift */,
+				938BBA3629854B7200858318 /* DeeplAPI.swift */,
+				938BBA3A29854B7200858318 /* SourceLanguageView.swift */,
+				938BBA3B29854B7200858318 /* TargetLanguageView.swift */,
+				938BBA3329854B7200858318 /* StudyImageView.swift */,
+				938BBA3529854B7200858318 /* WrongExamView.swift */,
+				938BBA3729854B7200858318 /* ProductView.swift */,
+				938BBA3829854B7200858318 /* DetailExamListView.swift */,
+				938BBA3929854B7200858318 /* DeleteDataView.swift */,
+				938BBA3F29854B7200858318 /* SettingView.swift */,
+				938BBA4129854B7200858318 /* StartExamView.swift */,
+				938BBA4229854B7200858318 /* ExamHomeView.swift */,
+				938BBA4329854B7200858318 /* ResultExamView.swift */,
+				938BBA4429854B7200858318 /* WrongResultView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		938BBA5929854B7C00858318 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				938BBA5A29854B7C00858318 /* SourceLangModel.swift */,
+				938BBA6029854B7C00858318 /* TargetLangModel.swift */,
+				938BBA5B29854B7C00858318 /* DictionaryViewModel.swift */,
+				938BBA5C29854B7C00858318 /* SettingViewModel.swift */,
+				938BBA5D29854B7C00858318 /* ExamViewModel.swift */,
+				938BBA5E29854B7C00858318 /* StoreKitManager.swift */,
+				938BBA5F29854B7C00858318 /* NetworkState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		938BBA7029860DBB00858318 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				938BBA3C29854B7200858318 /* CameraScannerViewController.swift */,
+				938BBA3129854B7200858318 /* CameraScannerView.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		938BBA16298541F300858318 /* MyWordStudy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 938BBA25298541F700858318 /* Build configuration list for PBXNativeTarget "MyWordStudy" */;
+			buildPhases = (
+				938BBA13298541F300858318 /* Sources */,
+				938BBA14298541F300858318 /* Frameworks */,
+				938BBA15298541F300858318 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyWordStudy;
+			packageProductDependencies = (
+				938BBA292985434900858318 /* Realm */,
+				938BBA2B2985434900858318 /* RealmSwift */,
+				938BBA2E298549F400858318 /* Alamofire */,
+			);
+			productName = MyWordStudy;
+			productReference = 938BBA17298541F300858318 /* MyWordStudy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		938BBA0F298541F300858318 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					938BBA16298541F300858318 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 938BBA12298541F300858318 /* Build configuration list for PBXProject "MyWordStudy" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 938BBA0E298541F300858318;
+			packageReferences = (
+				938BBA282985434900858318 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				938BBA2D298549F400858318 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = 938BBA18298541F300858318 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				938BBA16298541F300858318 /* MyWordStudy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		938BBA15298541F300858318 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				938BBA22298541F700858318 /* Preview Assets.xcassets in Resources */,
+				938BBA6D29854BA400858318 /* PropertyList.plist in Resources */,
+				938BBA6E29854BA400858318 /* Assets.xcassets in Resources */,
+				938BBA6F29854BA400858318 /* Product.storekit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		938BBA13298541F300858318 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				938BBA4B29854B7200858318 /* ProductView.swift in Sources */,
+				938BBA4E29854B7200858318 /* SourceLanguageView.swift in Sources */,
+				938BBA6229854B7C00858318 /* DictionaryViewModel.swift in Sources */,
+				938BBA4C29854B7200858318 /* DetailExamListView.swift in Sources */,
+				938BBA4A29854B7200858318 /* DeeplAPI.swift in Sources */,
+				938BBA6129854B7C00858318 /* SourceLangModel.swift in Sources */,
+				938BBA6629854B7C00858318 /* NetworkState.swift in Sources */,
+				938BBA5029854B7200858318 /* CameraScannerViewController.swift in Sources */,
+				938BBA5329854B7200858318 /* SettingView.swift in Sources */,
+				938BBA4829854B7200858318 /* DictionaryListView.swift in Sources */,
+				938BBA5229854B7200858318 /* RegisterView.swift in Sources */,
+				938BBA5129854B7200858318 /* EmptyInfoView.swift in Sources */,
+				938BBA5429854B7200858318 /* DictionaryView.swift in Sources */,
+				938BBA4F29854B7200858318 /* TargetLanguageView.swift in Sources */,
+				938BBA4929854B7200858318 /* WrongExamView.swift in Sources */,
+				938BBA4529854B7200858318 /* CameraScannerView.swift in Sources */,
+				938BBA5829854B7200858318 /* WrongResultView.swift in Sources */,
+				938BBA4629854B7200858318 /* TranslateView.swift in Sources */,
+				938BBA5629854B7200858318 /* ExamHomeView.swift in Sources */,
+				938BBA4729854B7200858318 /* StudyImageView.swift in Sources */,
+				938BBA6329854B7C00858318 /* SettingViewModel.swift in Sources */,
+				938BBA5729854B7200858318 /* ResultExamView.swift in Sources */,
+				938BBA6429854B7C00858318 /* ExamViewModel.swift in Sources */,
+				938BBA6529854B7C00858318 /* StoreKitManager.swift in Sources */,
+				938BBA6929854B8C00858318 /* HomeTabView.swift in Sources */,
+				938BBA1B298541F300858318 /* MyWordStudyApp.swift in Sources */,
+				938BBA5529854B7200858318 /* StartExamView.swift in Sources */,
+				938BBA6729854B7C00858318 /* TargetLangModel.swift in Sources */,
+				938BBA4D29854B7200858318 /* DeleteDataView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		938BBA23298541F700858318 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		938BBA24298541F700858318 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		938BBA26298541F700858318 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MyWordStudy/Preview Content\"";
+				DEVELOPMENT_TEAM = HQMBFBNNSU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Use came function for this app";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuuki.MyWordStudyID;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		938BBA27298541F700858318 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MyWordStudy/Preview Content\"";
+				DEVELOPMENT_TEAM = HQMBFBNNSU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Use came function for this app";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuuki.MyWordStudyID;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		938BBA12298541F300858318 /* Build configuration list for PBXProject "MyWordStudy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				938BBA23298541F700858318 /* Debug */,
+				938BBA24298541F700858318 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		938BBA25298541F700858318 /* Build configuration list for PBXNativeTarget "MyWordStudy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				938BBA26298541F700858318 /* Debug */,
+				938BBA27298541F700858318 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		938BBA282985434900858318 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		938BBA2D298549F400858318 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		938BBA292985434900858318 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 938BBA282985434900858318 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		938BBA2B2985434900858318 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 938BBA282985434900858318 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		938BBA2E298549F400858318 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 938BBA2D298549F400858318 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 938BBA0F298541F300858318 /* Project object */;
+}
