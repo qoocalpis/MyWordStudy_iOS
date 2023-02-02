@@ -148,15 +148,15 @@
 				938BBA3A29854B7200858318 /* SourceLanguageView.swift */,
 				938BBA3B29854B7200858318 /* TargetLanguageView.swift */,
 				938BBA3329854B7200858318 /* StudyImageView.swift */,
-				938BBA3529854B7200858318 /* WrongExamView.swift */,
-				938BBA3729854B7200858318 /* ProductView.swift */,
+				938BBA4229854B7200858318 /* ExamHomeView.swift */,
 				938BBA3829854B7200858318 /* DetailExamListView.swift */,
+				938BBA4129854B7200858318 /* StartExamView.swift */,
+				938BBA4329854B7200858318 /* ResultExamView.swift */,
+				938BBA3529854B7200858318 /* WrongExamView.swift */,
+				938BBA4429854B7200858318 /* WrongResultView.swift */,
+				938BBA3729854B7200858318 /* ProductView.swift */,
 				938BBA3929854B7200858318 /* DeleteDataView.swift */,
 				938BBA3F29854B7200858318 /* SettingView.swift */,
-				938BBA4129854B7200858318 /* StartExamView.swift */,
-				938BBA4229854B7200858318 /* ExamHomeView.swift */,
-				938BBA4329854B7200858318 /* ResultExamView.swift */,
-				938BBA4429854B7200858318 /* WrongResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

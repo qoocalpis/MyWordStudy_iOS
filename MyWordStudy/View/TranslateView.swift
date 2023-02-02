@@ -38,7 +38,10 @@ struct TranslateView: View {
     @Binding var selectTabIndex: Int
     //親ViewのHomeTabViewから引数を引き継いでイニシャライザ処理
     init(selectTabIndex: Binding<Int>, countRecentSource: Int, countRecentTarget: Int) {
+        //HomeTabViewのtag(index)
         self._selectTabIndex = selectTabIndex
+        
+        //RecentlySourceModelにレコードがある場合
         if countRecentSource > 0 {
             let realm = try! Realm()
             let resultLang = realm.objects(RecentlySourceModel.self).sorted(byKeyPath: "date", ascending: false)[0].language
@@ -54,9 +57,11 @@ struct TranslateView: View {
                 }
                 sourceObject = tempObject
             }
+        //ない場合はデフォルト
         }else {
             sourceObject = SourceLangArray()
         }
+        //RecentlyTargetModelにレコードがある場合
         if countRecentTarget > 0 {
             let realm = try! Realm()
             let resultLang = realm.objects(RecentlyTargetModel.self).sorted(byKeyPath: "date", ascending: false)[0].language
@@ -72,6 +77,7 @@ struct TranslateView: View {
                 }
                 targetObject = tempObject
             }
+        //ない場合はデフォルト
         }else {
             targetObject = TargetLangArray()
         }
@@ -80,18 +86,22 @@ struct TranslateView: View {
     var body: some View {
         NavigationStack {
             ZStack {
+                //OriginalColor(Assets.xcassetsファイルに定義)
                 Color("TranslateViewBackgroundColor")
                 VStack {
                     HStack {
                         Button {
+                            //翻訳元言語指定Viewの呼び出し状態
                             isSheetSource.toggle()
                         } label: {
                             ZStack {
-                                Text(selectedSource().language).font(.headline).padding().foregroundColor(Color("TranslateLanguageColor"))
+                                //選択されている言語
+                                Text(selectedSource().language).font(.headline).padding().foregroundColor(Color("TranslateLanguageColor"))//OriginalColor(Assets.xcassetsファイルに定義)
                             }
                         }.padding()
                         Spacer()
                         Button {
+                            //翻訳元と翻訳先の言語の入れ替え
                             reverseLang(source: selectedSource(), target: selectedTarget())
                         } label: {
                             Image(systemName: "arrow.left.arrow.right").foregroundColor(.pink)
@@ -99,16 +109,21 @@ struct TranslateView: View {
                         
                         Spacer()
                         Button {
+                            //翻訳先言語指定Viewの呼び出し状態
                             isSheetTarget.toggle()
                         } label: {
-                            Text(selectedTarget().language).font(.headline).padding().foregroundColor(Color("TranslateLanguageColor"))
+                            //選択されている言語
+                            Text(selectedTarget().language).font(.headline).padding().foregroundColor(Color("TranslateLanguageColor"))//OriginalColor(Assets.xcassetsファイルに定義)
                         }.padding()
                     }
+                    //タイトルとそのレイアウト
                     .navigationTitle("Translate")
                     .navigationBarTitleDisplayMode(.large)
+                    //左右上部にScreen切り替えボタンの設定
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
                             Button {
+                                //HomeTabViewのtag(index)を指定
                                 selectTabIndex = 0
                             } label: {
                                 VStack {
@@ -122,6 +137,7 @@ struct TranslateView: View {
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button {
+                                //HomeTabViewのtag(index)を指定
                                 selectTabIndex = 3
                             } label: {
                                 VStack {
@@ -134,37 +150,43 @@ struct TranslateView: View {
                             }
                         }
                     }
+                    //翻訳元言語指定Viewの呼び出し
                     .sheet(isPresented: $isSheetSource, content: {
                         SourceLanguageView(vm: sourceObject)
                     })
+                    //翻訳先言語指定Viewの呼び出し
                     .sheet(isPresented: $isSheetTarget, content: {
                         TargetLanguageView(vm: targetObject)
                     })
                     .padding()
+                    //翻訳するテキスト
                     TextField("input", text: $text)
-                        .onTapGesture {
-                            print("Tap")
-                        }
+                        //キーボード自動表示
                         .focused($fieldIsFocused)
+                        //レイアウト設定
                         .overlay(
                             RoundedRectangle(cornerSize: CGSize(width: 8.0, height: 8.0))
                                 .stroke(Color.orange, lineWidth: 1.0)
                                 .padding(-8.0)
                         )
                         .padding(16.0)
+                        //入力文字数制限
                         .onReceive(Just(text)) { _ in
                             if text.count > maxTextLength {
                                 text = String(text.prefix(maxTextLength))
                             }
                         }
+                    //network未接続時
                     if !isNetwork { Text("※ internet doesn’t work").foregroundColor(Color.red) }
+                    //翻訳後のTextに値が存在する場合
                     if translatedText != "" {
                         Text(translatedText).padding()
-                        
                         Button {
+                            //購入済の場合SAVEボタン有効
                             if isPurchased {
                                 isAnimation.toggle()
                                 add_model(word: text, definition: translatedText)
+                            //未購入の場合Alertの呼び出し
                             }else {
                                 isAlert.toggle()
                             }
@@ -177,6 +199,7 @@ struct TranslateView: View {
                                     .animation(.easeIn, value: isAnimation)
                                 isAnimation ? Text("Completed") : Text("SAVE")
                                     .foregroundColor(Color.black)
+                                //未購入の場合,鍵表示
                                 if !isPurchased {
                                     Image(systemName: "lock.fill")
                                         .font(.title)
@@ -191,6 +214,7 @@ struct TranslateView: View {
                             }
                         }
                         .padding()
+                        //未購入の場合のAlert表示
                         .alert("Warning", isPresented: $isAlert) {
                             Button("OK") {
                             }
@@ -207,24 +231,31 @@ struct TranslateView: View {
             DispatchQueue.main.asyncAfter(deadline: .now()+0.3) {
                 fieldIsFocused = true
             }
+            //製品が購入済か調べる
             Task {
                 isPurchased = (try? await storeKit.isPurchased()) ?? false
             }
         }
+        //キーボードのreturnキーtap時,翻訳実行
         .onSubmit({
             translation(text: text, sourcePara: selectedSource().parLanguage, targetPara: selectedTarget().parLanguage)
         })
+        //入力時,常に翻訳実行
         .onChange(of: text) { newValue in
             translation(text: text, sourcePara: selectedSource().parLanguage, targetPara: selectedTarget().parLanguage)
         }
+        //Saveボタンtap時のアニメーションの動作
         .onChange(of: isAnimation) { newValue in
+            //1.5秒後にfalseに戻す
             if newValue {
                 DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
                     isAnimation = false
                 }
             }
         }
+        //network接続確認
         .onChange(of: network.isConnected) { newValue in
+            //2秒後に接続状況を取得
             DispatchQueue.main.asyncAfter(deadline: .now()+2) {
                 isNetwork = newValue
             }

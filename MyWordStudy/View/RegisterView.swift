@@ -12,21 +12,29 @@ import StoreKit
 
 struct RegisterView: View {
     
-    @State var word = ["", "", "", "", ""]
-    @State var definition = ["", "", "", "", ""]
+    //格TextField分の配列
+    @State var wordsArray = ["", "", "", "", ""]
+    @State var definitionsArray = ["", "", "", "", ""]
+    //Saveボタン時のAlert呼び出し状態
     @State var isAlert: Bool = false
+    //Saveボタンの有効可否
     @State var isSaveButton: Bool = false
     @State var addedIndexToString: String = ""
+    //課金製品情報
     @State var isPurchased: Bool = false
     @StateObject var storeKit = StoreKitManager()
+    //View表示時のキーボード自動表示
     @FocusState private var nameFieldIsFocused: Bool
+    //親ViewのDictionaryView or EmptyInfoViewへ戻る
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationStack {
             ZStack{
+                //背景色の設定
                 Color("BackgroundColorBlue")
                     .ignoresSafeArea()
+                //左上に親Viewへ戻るボタン設定
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading){
                             Button {
@@ -40,41 +48,49 @@ struct RegisterView: View {
                 VStack{
                     Text("Please register new dictionary")
                         .font(.title2)
+                    //5行ずつword,definitionのTextField
                     inputTextField()
                         .padding(1)
                     HStack{
                         Button {
-                            word = ["", "", "", "", ""]
-                            definition = ["", "", "", "", ""]
+                            //Tap時に格TextFieldをリセット
+                            wordsArray = ["", "", "", "", ""]
+                            definitionsArray = ["", "", "", "", ""]
                         } label: {
+                            //リセットボタンのレイアウト
                             resetBody
                         }
                         .padding(15)
                         Button {
-                            addDictionary(word: word, definition: definition)
-                            word = ["", "", "", "", ""]
-                            definition = ["", "", "", "", ""]
-                            read_model()
+                            //Tap時に辞書を保存&格TextFieldをリセット
+                            addDictionary(word: wordsArray, definition: definitionsArray)
+                            wordsArray = ["", "", "", "", ""]
+                            definitionsArray = ["", "", "", "", ""]
                         } label: {
+                            //SAVEボタンのレイアウト
                             saveBody
                         }
                         .padding(15)
                     }
+                    //View立ち上げ時の処理
                     .onAppear {
                         /// 0.3秒の遅延発生後TextFieldに初期フォーカスをあてる
                         DispatchQueue.main.asyncAfter(deadline: .now()+0.3) {
                             nameFieldIsFocused = true
                         }
+                        //製品が購入済か調べる
                         Task {
                             isPurchased = (try? await storeKit.isPurchased()) ?? false
                         }
                     }
-                    .onChange(of: word) { newValue in
-                        isSaveButton = checkTextField(word: newValue, definition: definition)
+                    //Saveボタンの有効可否を入力時にcheck
+                    .onChange(of: wordsArray) { newValue in
+                        isSaveButton = checkTextField(word: newValue, definition: definitionsArray)
                     }
-                    .onChange(of: definition) { newValue in
-                        isSaveButton = checkTextField(word: word, definition: newValue)
+                    .onChange(of: definitionsArray) { newValue in
+                        isSaveButton = checkTextField(word: wordsArray, definition: newValue)
                     }
+                    //Saveボタンが成功時のAlert
                     .alert("Result", isPresented: $isAlert) {
                         Button("OK") {
                             addedIndexToString = ""
@@ -82,6 +98,7 @@ struct RegisterView: View {
                     } message: {
                         Text("\(addedIndexToString) successed!")
                     }
+                    //未購入時のみ表示
                     infomaition(isPurchased: $isPurchased)
                 }
             }
@@ -117,36 +134,38 @@ struct RegisterView: View {
     }
     
     func inputTextField() -> some View {
-        ForEach(0..<word.count, id: \.self){ i in
+        ForEach(0..<wordsArray.count, id: \.self){ i in
             HStack {
                 Text("#\(i+1)")
                 if(i==0){
-                    TextField("word", text: $word[i])
+                    TextField("word", text: $wordsArray[i])
                         .focused($nameFieldIsFocused)
                         .frame(width: 130, height: 40)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     Text("....")
-                    TextField("definition", text: $definition[i])
+                    TextField("definition", text: $definitionsArray[i])
                         .frame(width: 170, height: 40)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }else{
+                    //購入済みの場合
                     if isPurchased {
-                        TextField("word", text: $word[i])
+                        TextField("word", text: $wordsArray[i])
                             .frame(width: 130, height: 40)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                         Text("....")
-                        TextField("definition", text: $definition[i])
+                        TextField("definition", text: $definitionsArray[i])
                             .frame(width: 170, height: 40)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
+                    //未購入の場合,2~5行のTextFieldは無効
                     }else {
-                            TextField("word", text: $word[i])
-                                .disabled(true)
+                            TextField("word", text: $wordsArray[i])
+                                .disabled(true) //無効
                                 .frame(width: 130, height: 40)
                                 .background(Color.black.opacity(0.3))
                                 .cornerRadius(5)
                             Text("....")
-                            TextField("definition", text: $definition[i])
-                                .disabled(true)
+                            TextField("definition", text: $definitionsArray[i])
+                                .disabled(true) //無効
                                 .frame(width: 170, height: 40)
                                 .background(Color.black.opacity(0.3))
                                 .cornerRadius(5)
@@ -155,8 +174,10 @@ struct RegisterView: View {
             }
         }
     }
+    //Realm辞書モデルに保存
     func addDictionary(word: [String], definition: [String]) -> Void {
         
+        //配列の数分を保存
         for i in 0..<word.count {
             
             if(word[i] == "" || definition[i] == ""){
@@ -211,6 +232,7 @@ struct RegisterView: View {
                 }
             }
         }
+        //
         if addedIndexToString != "" {
             addedIndexToString = String(addedIndexToString.dropLast())
             DispatchQueue.main.asyncAfter(deadline: .now()+0.3) {
@@ -226,8 +248,10 @@ struct infomaition : View {
     @Binding var isPurchased: Bool
     
     var body: some View {
+        //未購入の場合
         if !isPurchased {
             Button {
+                //Alertの呼び出し
                 isAlert.toggle()
             } label: {
                 HStack {
@@ -235,6 +259,7 @@ struct infomaition : View {
                     Text("If you want to use all input functions")
                 }
             }
+            //Alert表示
             .alert("Warning", isPresented: $isAlert) {
                 Button("OK") {
                     isAlert.toggle()
