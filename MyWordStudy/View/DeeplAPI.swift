@@ -25,7 +25,7 @@ extension TranslateView {
     func translation(text: String, sourcePara: String, targetPara: String) {
         
         // DeepL API認証キー
-        let authKey: String = "d59807ee-980d-a908-896b-73f850a906bc:fx"
+        let authKey: String = "************************************"
         // APIリクエストするパラメータを作成
         let parameters: [String: String] = [
             "text": text,
